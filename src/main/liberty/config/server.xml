@@ -3,8 +3,8 @@
         <feature>microProfile-3.2</feature>
     </featureManager>
 
-    <httpEndpoint host="*" httpPort="${default.http.port}" 
+    <httpEndpoint host="*" httpPort="${default.http.port}"
         httpsPort="${default.https.port}" id="defaultHttpEndpoint"/>
-    
-    <webApplication location="starter-app.war" contextRoot="/"/>
+
+    <webApplication name="customer-ms-openliberty" location="customer-ms-openliberty.war" contextRoot="/"/>
 </server>
