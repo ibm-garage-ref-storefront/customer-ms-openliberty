@@ -7,7 +7,7 @@ import sys
 host = str(sys.argv[1])
 port = str(sys.argv[2])
 
-client = CouchDB("admin", "passw0rd", url = "http://" + host + ":" + port, connect=True)
+client = CouchDB("admin", "password", url = "http://" + host + ":" + port, connect=True)
 client.connect()
 databaseName = "customers"
 
