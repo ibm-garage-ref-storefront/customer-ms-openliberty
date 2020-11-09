@@ -23,8 +23,8 @@
     </webApplication>
     
     <ssl id="defaultSSLConfig" keyStoreRef="bcKeyStore" trustStoreRef="bcTrustStore"/>
-    <keyStore id="bcKeyStore" location="${server.config.dir}/resources/security/BCKeyStoreFile.p12" password="password"/>
-    <trustStore id="bcTrustStore" location="${server.config.dir}/resources/security/truststore.p12" password="password"/>
+    <keyStore id="bcKeyStore" location="${server.config.dir}/resources/security/BCKeyStoreFile.p12" password="${env.keystorePassword}"/>
+    <trustStore id="bcTrustStore" location="${server.config.dir}/resources/security/truststore.p12" password="${env.keystorePassword}"/>
 
     <!--These values are defined in pom.xml-->
     <mpJwt id="jwtUserConsumer" keyName="bckey" issuer="${env.jwksIssuer}" signatureAlgorithm="RS256" sslRef="defaultSSLConfig"/>
