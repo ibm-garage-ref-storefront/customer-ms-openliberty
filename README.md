@@ -35,7 +35,7 @@ Here is an overview of the project's features:
 
 ### APIs
 
-The Orders Microservice REST API is OAuth 2.0 protected. These APIs identifies and validates the caller using signed JWT tokens.
+The Customer Microservice REST API is OAuth 2.0 protected. These APIs identifies and validates the caller using signed JWT tokens.
 
 * `GET /micro/customer`
 
@@ -241,11 +241,11 @@ $ curl -k --request GET --url https://localhost:9443/micro/customer --header 'Au
 
 If enabled Jaegar, access it at http://localhost:16686/ and point the service to `customer-ms-openliberty` to access the traces.
 
-![Jaegar UI](./static/jaegar_ui_orders.png)
+![Jaegar UI](./static/jaegar_ui_customer.png)
 
 ![Jaegar traces](./static/jaegar_traces.png)
 
-Also openapi is enabled.
+Also, openapi is enabled.
 
     - http://localhost:9080/openapi/ui/
     - http://localhost:9080/index.html
@@ -272,6 +272,6 @@ Closing down development environment.
 
 ## Conclusion
 
-You have successfully deployed and tested the Orders Microservice and a MariaDB database in local Docker Containers using Appsody.
+You have successfully deployed and tested the Customer Microservice and a CouchDB database in local Docker Containers using Appsody.
 
-To see the Orders application working in a more complex microservices use case, checkout our Microservice Reference Architecture Application [here](https://cloudnativereference.dev/).
+To see the Customers application working in a more complex microservices use case, checkout our Microservice Reference Architecture Application [here](https://cloudnativereference.dev/).
