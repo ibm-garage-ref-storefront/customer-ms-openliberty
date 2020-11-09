@@ -10,6 +10,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
+import org.eclipse.microprofile.config.Config;
+import org.eclipse.microprofile.config.ConfigProvider;
 import org.eclipse.microprofile.rest.client.annotation.ClientHeaderParam;
 import org.eclipse.microprofile.rest.client.annotation.RegisterProvider;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
@@ -25,8 +27,12 @@ import com.ibm.json.java.JSONObject;
 public interface CouchDBClientService {
 	
 	default String lookupAuth() {
+		Config config = ConfigProvider.getConfig();
+		String user = config.getValue("couch_user", String.class);
+		String password = config.getValue("couch_password", String.class);
+		String creds = user+":"+password;
 	    return "Basic " + 
-	         Base64.getEncoder().encodeToString("admin:password".getBytes());
+	         Base64.getEncoder().encodeToString(creds.getBytes());
 	}
 	
 	@GET

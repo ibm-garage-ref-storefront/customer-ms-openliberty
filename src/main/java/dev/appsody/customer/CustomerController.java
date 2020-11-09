@@ -9,9 +9,11 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import org.eclipse.microprofile.jwt.JsonWebToken;
+import org.eclipse.microprofile.opentracing.Traced;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
 import dev.appsody.customer.client.CouchDBClientService;
+import io.opentracing.Tracer;
 
 import com.ibm.json.java.JSONArray;
 import com.ibm.json.java.JSONObject;
@@ -26,10 +28,13 @@ public class CustomerController {
 	
 	@Inject
     private JsonWebToken jwt;
+	
+	@Inject Tracer tracer;
 
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
+    @Traced(value = true, operationName = "getCustomerInfo")
     public Response getCustomerByUsername() throws Exception{
         try {
             JSONObject body = new JSONObject();
