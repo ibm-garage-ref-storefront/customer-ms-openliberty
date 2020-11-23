@@ -1,13 +1,13 @@
-package dev.appsody.starter;
+package dev.appsody.customer;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 
 @Path("/resource")
-public class StarterResource {
+public class CustomerResource {
 
     @GET
     public String getRequest() {
-        return "StarterResource response";
+        return "CustomerResource response";
     }
 }

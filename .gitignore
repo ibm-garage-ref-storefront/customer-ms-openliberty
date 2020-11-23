@@ -26,3 +26,12 @@
 
 ### VS Code ###
 .vscode/
+/target/
+
+.DS_Store
+
+### Certs ###
+
+/src/main/liberty/config/resources/security/BCKeyStoreFile.p12
+/src/main/liberty/config/resources/security/truststore.p12
+/src/main/liberty/config/resources/security/client.cer
