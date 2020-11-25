@@ -28,8 +28,8 @@ public interface CouchDBClientService {
 	
 	default String lookupAuth() {
 		Config config = ConfigProvider.getConfig();
-		String user = config.getValue("couch_user", String.class);
-		String password = config.getValue("couch_password", String.class);
+		String user = config.getValue("couchuser", String.class);
+		String password = config.getValue("couchpassword", String.class);
 		String creds = user+":"+password;
 	    return "Basic " + 
 	         Base64.getEncoder().encodeToString(creds.getBytes());
